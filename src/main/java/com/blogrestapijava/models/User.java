@@ -2,10 +2,12 @@ package com.blogrestapijava.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 
-@Document(collection = "users") // Specify the MongoDB collection name
+@Component
+@Document(collection = "users")
 public class User {
 
     @Id
@@ -14,6 +16,25 @@ public class User {
     private String firstName;
     private String lastName;
     private Timestamp registeredAt;
+
+    public User() {
+
+    }
+
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", registeredAt=" + registeredAt +
+                '}';
+    }
 
     public String getId() {
         return id;
