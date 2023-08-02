@@ -10,6 +10,6 @@ public class BlogRestApiJavaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BlogRestApiJavaApplication.class, args);
-        System.out.println("Main is running!");
+
     }
 }
