@@ -3,6 +3,8 @@ package com.blogrestapijava.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.sql.Timestamp;
+
 @Document(collection = "users") // Specify the MongoDB collection name
 public class User {
 
@@ -11,7 +13,7 @@ public class User {
 
     private String firstName;
     private String lastName;
-    // Other fields, getters, setters, constructors, etc.
+    private Timestamp registeredAt;
 
     public String getId() {
         return id;
@@ -23,6 +25,14 @@ public class User {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public Timestamp getRegisteredAt() {
+        return registeredAt;
+    }
+
+    public void setRegisteredAt(Timestamp registeredAt) {
+        this.registeredAt = registeredAt;
     }
 
     public void setFirstName(String firstName) {

@@ -3,6 +3,7 @@ package com.blogrestapijava.services;
 import com.blogrestapijava.models.User;
 import com.blogrestapijava.models.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,4 +27,10 @@ public class UserService {
     }
 
     // Add other business logic as needed
+
+    @Scheduled(fixedDelay = 5000) // Execute the method every 5 seconds
+    public void runBackgroundTask() {
+        // Perform your background task here
+        System.out.println("Background task running...");
+    }
 }
